@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="dependies.h" />
+    <ClInclude Include="Function_template.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
