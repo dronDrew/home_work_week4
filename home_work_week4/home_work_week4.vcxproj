@@ -141,9 +141,11 @@
     <ClInclude Include="dependies.h" />
     <ClInclude Include="Function_template.h" />
     <ClInclude Include="Matrix_template.h" />
+    <ClInclude Include="string_check.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="string_check.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

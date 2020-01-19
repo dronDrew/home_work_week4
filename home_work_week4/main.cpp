@@ -1,22 +1,14 @@
 #include "dependies.h"
 #include "Function_template.h"
 #include "Matrix_template.h"
+#include "string_check.h"
 
 using namespace std;
 
 int main() {
 
-	Matrix<int>a(2,3);
-	a.RandInit();
-	a.Show();
-	cout << "_______________________\n";
-	Matrix<int>b(2,3);
-	b.RandInit();
-	b.Show();
-	cout << "_______________________\n";
-	Matrix<int>c;
-	c = b;
-    c=b + a;
-	c.Show();
+	string_check a("([x-y-z}*[x+2y)-{z+4x)].");
+	cout<<"---------------------------------------------\n";
+	//cout << boolalpha << a.is_corect() << endl;
 	return 0;
 }
