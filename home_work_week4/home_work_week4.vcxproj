@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="dependies.h" />
     <ClInclude Include="Function_template.h" />
+    <ClInclude Include="Matrix_template.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
