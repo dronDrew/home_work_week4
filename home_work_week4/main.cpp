@@ -8,7 +8,9 @@
 using namespace std;
 
 int main() {
-
-	
+	Printing_server a;
+	a.Add(12, 1, 123);
+	a.Add(15, 2, 124);
+	a.Show();
 	return 0;
 }

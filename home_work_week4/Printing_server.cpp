@@ -33,16 +33,79 @@ void Printing_server::Add(int client, int priore, int time) {
 	}
 	else
 	{
-		Printing_docum *temp=new Printing_docum(client, priore, time);
-		Printing_docum* sercher = this->docum;
-		while (priore<sercher->priore)
-		{
-			sercher = sercher->nextdocum;
+		if (this->docum->nextdocum == nullptr) {
+			if (priore < this->docum->priore) {
+			Printing_docum *temp= new Printing_docum(client, priore, time);
+			temp->nextdocum = this->docum;
+			this->docum = temp;
+			}
+			else
+			{
+				Printing_docum* temp = new Printing_docum(client, priore, time);
+				temp->priviosdocum = this->docum;
+				this->docum->nextdocum = temp;
+			}
 		}
-		sercher = sercher->nextdocum;
-		temp->nextdocum = sercher;
-		temp->priviosdocum = sercher->priviosdocum;
-		Printing_docum* sercher1 = ;
+		else
+		{
+
+
+
+
+		}
+	}
+
+}
+void Printing_server::Show() {
+	Printing_docum* temp;
+	if (this->docum == nullptr) {
+		std::cout << "Documents was not printing\n";
+	}
+	else
+	{
+		temp = this->docum;
+		while (temp != nullptr)
+		{
+			std::cout << "Client : " << temp->client << std::endl;
+			std::cout << "Priore : " << temp->priore << std::endl;
+			std::cout << "Time   : " << temp->time << std::endl;
+			temp = temp->nextdocum;
+		}
+	}
+}
+void Printing_server::Add_tostory(int client, int priore, int time) {
+	if (this->deleted_docum == nullptr) {
+		this->deleted_docum = new Printing_docum(client, priore, time);
+	}
+	else
+	{
+		Printing_docum* temp = this->deleted_docum;
+			while (temp->nextdocum!=nullptr)
+			{
+				temp = temp->nextdocum;
+			}
+			temp->nextdocum = new Printing_docum(client, priore, time);
+			temp->priviosdocum = temp;
+	}
+
+
+}
+void Printing_server::Pop() {
+	if (this == nullptr) {
+	}
+	Printing_docum* temp = this->docum;
+	if (temp->nextdocum == nullptr && temp->priviosdocum == nullptr) {
+		delete temp;
+		temp = nullptr;
+		this->docum = temp;
+	}
+	else
+	{
+		temp = this->docum->nextdocum;
+		Add_tostory(temp->priviosdocum->client, temp->priviosdocum->priore, temp->priviosdocum->time);
+		delete temp->priviosdocum;
+		temp->priviosdocum = nullptr;
+		this->docum = temp;
 	}
 
 }

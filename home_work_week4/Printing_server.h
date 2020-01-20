@@ -16,7 +16,9 @@ public:
 	Printing_docum* deleted_docum;
 	Printing_server();
 	void Add(int client, int priore, int time);
+	void Add_tostory(int client, int priore, int time);
 	void Pop();
 	void Show_statictic();
+	void Show();
 };
 
