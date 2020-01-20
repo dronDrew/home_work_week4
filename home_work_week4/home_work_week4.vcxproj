@@ -138,13 +138,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bus_stop.h" />
     <ClInclude Include="dependies.h" />
     <ClInclude Include="Function_template.h" />
     <ClInclude Include="Matrix_template.h" />
+    <ClInclude Include="Printing_server.h" />
     <ClInclude Include="string_check.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bus_stop.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Printing_server.cpp" />
     <ClCompile Include="string_check.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
